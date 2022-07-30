@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout.html}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+  <title>Document</title>
+</head>
+<body>
+  <section class="container-fluid row mt-5" layout:fragment="content">
+
+    <!-- side bar -->
+     <div class="col-md-3 side-bar"> 
+      <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Title</h5>
+    <p class="card-text">Content</p>
+  </div>
+</div>
+</div>
+<!-- main content -->
+
+    <div class="col-md-8 ">
+   
+    <div class="content " >
+      
+        
+        <div class="product" th:each="product : ${products}" >
+           <a href=""><img th:src="${product.imgurl}" alt=""> </a> 
+            <p th:text="${product.productDescription}"></p>
+           <h5><span th:utext="${'ksh'+'&nbsp;'}"></span><span th:text="${product.productCost}"></span></h5>
+             <button class="btn btn-success" id="add-cart" onclick="addTocart()">ADD TO CART</button>
+
+          
+        </div>
+
+
+        
+        <div class="product">4</div>
+        <div class="product">5</div>
+        <div class="product">6</div>
+        <div class="product">4</div>
+        <div class="product">5</div>
+        <div class="product">6</div>
+    </div>
+    
+    
+  
+</div>
+
+    </div>
+   
+
+   <script th:src="@{/js/index.js}"></script>
+  </section>
+</body>
+</html>

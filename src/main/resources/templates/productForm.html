@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout.html}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productForm</title>
+</head>
+<body>
+    <section class="container col-md-5 mt-5" layout:fragment="content">
+ <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
+
+    <div class="form-group">
+    <label for="productName">productName</label>
+    <input type="text" th:field="*{productName}" id="productName" class="form-control" placeholder="productName">
+    <span th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"></span> 
+      </div>
+   <div class="form-group">
+    <label for="productDescription">Description</label>
+    <input type="text" th:field="*{productDescription}" class="form-control" id="productDescription" placeholder="description">
+    <span th:if="${#fields.hasErrors('productDescription')}" th:errors="*{productDescription}"></span>
+
+   </div>
+    <div class="form-group">
+         <label for="productCost">productCost</label>
+    <input type="number" th:field="*{productCost}" class="form-control" id="cost" placeholder="productCost">
+    <span th:if="${#fields.hasErrors('productCost')}" th:errors="*{productCost}"></span>
+
+    </div>
+   <div class="form-group">
+<label for="imgurl">imgurl</label>
+    <input type="text" th:field="*{imgurl}" class="form-control" id="imgurl" placeholder="imgurl">
+    <span th:if="${#fields.hasErrors('imgurl')}" th:errors="*{imgurl}"></span>
+
+   </div>
+    
+    <button class="btn btn-primary mt-4">save Product</button>  
+</form>
+    </section>
+   
+</body>
+</html>

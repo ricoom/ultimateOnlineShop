@@ -1,0 +1,25 @@
+.navbar{
+    background: rgb(47, 48, 49);
+}
+
+
+*{
+   margin-left: 0; 
+   padding: 0;
+}
+.my-cart{
+    position:relative;
+    left: 10px;
+
+
+    
+}
+.my-badge{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 80%;
+    color: white;
+    text-align: center;
+    background-color: orange;
+}
